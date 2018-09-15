@@ -117,7 +117,7 @@ for my $dt ( sort keys %{$data} ) {
         }
     }
     for my $movie ( keys %{$mem} ) {
-        push @changes, sprintf( "[DEL] %s", $movie );
+        @changes = ( sprintf( "[DEL] %s", $movie ), @changes );
     }
     $mem = $json;
     push @row, join( "<br/>\n", @changes );
